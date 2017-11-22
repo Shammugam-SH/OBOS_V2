@@ -42,35 +42,38 @@ include './userSessionCheck.php';
                         <a href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item">
-                        Manage Order
+                        Data Analysis
                     </li>
                     <li class="breadcrumb-item active">
-                        Rejected Order
+                        Overall Sales
                     </li>
                 </ol>
 
                 <!-- Icon Cards-->
                 <div class="row">
                     <div class="col-12">
+
+                        <br>
+
                         <!-- Example DataTables Card-->
                         <div class="card mb-3">
                             <div class="card-header">
-                                <i class="fa fa-users"></i> Rejected Order Management Page
+                                <i class="fa fa-users"></i> Overall Sales Segment
                             </div>
+
+                            <br>
+
                             <div class="card-body">
 
-                                <div id="rejectedOrderManagementPageHolder">
-
-                                    <div id="rejectedOrderManagementPageMainDiv">
-                                    </div>
-                                    <div class="table-responsive" id="rejectedOrderManagementPageTableDiv">
-                                    </div>
-                                    <?php include './modalForAllThePages.php'; ?>
-
+                                <div id="dataAnalysisOverallSales">
                                 </div>
 
                             </div>
                         </div>
+
+                        <br>
+
+
                     </div>
                 </div>
             </div>
@@ -98,9 +101,10 @@ include './userSessionCheck.php';
 
     $(document).ready(function () {
 
-        $('<div class="loading">Loading</div>').appendTo('body');
+        // $('<div class="loading">Loading</div>').appendTo('body');
 
-        $('#rejectedOrderManagementPageTableDiv').load('rejectedOrderManagementPageTable.php');
+        $('#dataAnalysisOverallSales').load('controllerProcess/dataAnalysisOverallSalesPageGetOverallSales.php');
+
 
     });
 

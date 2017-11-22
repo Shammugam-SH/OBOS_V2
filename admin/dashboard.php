@@ -7,11 +7,8 @@
 
 session_start();
 
-if ($_SESSION["userEmail"] == NULL) {
+include './userSessionCheck.php';
 
-    // Do stuff 
-    header("Location: './../controller/userLogout.php");
-}
 ?>
 
 <!DOCTYPE html>

@@ -52,6 +52,9 @@
                 <a href="manageAnalysisSummary.php">System Summary</a>
             </li>
             <li>
+                <a href="manageAnalysisOverallSales.php">Overall Sales</a>
+            </li>
+            <li>
                 <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">Product Sales Summary</a>
                 <ul class="sidenav-third-level collapse" id="collapseMulti">
                     <li>

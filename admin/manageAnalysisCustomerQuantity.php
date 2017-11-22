@@ -7,6 +7,9 @@
 
 
 session_start();
+
+include './userSessionCheck.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
