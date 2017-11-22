@@ -14,11 +14,9 @@ session_start();
 //                      0                       1                       2           
 $sqlSales = " SELECT ordermaster.order_no, ordermaster.customer_id, ordermaster.dateTxt, "
         //          3                       4                   5                        
-        . " SUM(ordermaster.total_amt) AS SALES, SUM(ordermaster.total_qty) AS QTY, ordermaster.status, "
-        //          6           7           8
-        . " users.userEmail,users.userFName,users.userLName  "
+        . " SUM(ordermaster.total_amt) AS SALES, SUM(ordermaster.total_qty) AS QTY, ordermaster.status "
         //    FROM AND JOIN CONDITION
-        . " FROM ordermaster JOIN users ON (users.userEmail = ordermaster.customer_id) "
+        . " FROM ordermaster  "
         //    WHERECONDITION
         . " WHERE ordermaster.status = '1'; ";
 

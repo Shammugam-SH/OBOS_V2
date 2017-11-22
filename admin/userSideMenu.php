@@ -55,8 +55,22 @@
                 <a href="manageAnalysisOverallSales.php">Overall Sales</a>
             </li>
             <li>
-                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">Product Sales Summary</a>
+                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">Periodic Sales Summary</a>
                 <ul class="sidenav-third-level collapse" id="collapseMulti">
+                    <li>
+                        <a href="manageAnalysisPeriodSalesDay.php">Daily Sales</a>
+                    </li>
+                    <li>
+                        <a href="manageAnalysisPeriodSalesMonth.php">Monthly Sales</a>
+                    </li>
+                    <li>
+                        <a href="manageAnalysisPeriodSalesYear.php">Yearly Sales</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Product Sales Summary</a>
+                <ul class="sidenav-third-level collapse" id="collapseMulti2">
                     <li>
                         <a href="manageAnalysisProductQuantity.php">Total Sales (Quantity)</a>
                     </li>
@@ -66,8 +80,8 @@
                 </ul>
             </li>
             <li>
-                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Customer Sales Summary</a>
-                <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3">Customer Sales Summary</a>
+                <ul class="sidenav-third-level collapse" id="collapseMulti3">
                     <li>
                         <a href="manageAnalysisCustomerQuantity.php">Total Sales (Quantity)</a>
                     </li>
