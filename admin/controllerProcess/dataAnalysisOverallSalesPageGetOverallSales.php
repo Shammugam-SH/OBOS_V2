@@ -85,7 +85,7 @@ if ($resultSales->num_rows > 0) {
                 </div>
                 <strong>
                     <div style="font-size: 40px;"><?php echo $totalQty; ?> UNITS</div>
-                    <div>Total Product Quantity Sold By The Shop (RM)</div>
+                    <div>Total Product Quantity Sold By The Shop (UNITS)</div>
                 </strong>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="manageOrderApproved.php">

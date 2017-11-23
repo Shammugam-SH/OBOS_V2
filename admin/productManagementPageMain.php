@@ -328,6 +328,222 @@
 
 
 
+        // Product View Image Function Start
+        $('#productManagementPageTableDiv').off('click', '#productManagementPageTable #viewImageProductButton').on('click', '#productManagementPageTable #viewImageProductButton', function (e) {
+
+            e.preventDefault();
+
+            var row = $(this).closest("tr");
+            var rowData = row.find("#productManagementPageTableHiddenInput").val();
+            var arrayData = rowData.split("|");
+
+            $('#viewImageModalTitle').text("View Product Image");
+
+            var arrayImgData = arrayData[6].split("/");
+
+            $('#viewImageProductCode').val(arrayData[1]);
+            $('#viewImageProductName').val(arrayData[2]);
+            $('#viewImageProductFileName').val(arrayImgData[2]);
+
+
+
+            var data = {
+                viewImageProductFileName: arrayData[6]
+            };
+
+            $.ajax({
+                url: "controllerProcess/productManagementPageViewImage.php",
+                type: "post",
+                data: data,
+                timeout: 10000,
+                success: function (datas) {
+
+                    $('#viewImageModalImagDiv').html(datas);
+
+                    $('#viewImageModal').modal('show');
+
+                },
+                error: function (err) {
+                    alert("Error Ajax Update!");
+                }
+
+            });
+
+
+        });
+        // Product View Image Function End
+
+
+
+        // Product Change Image Function Start
+        $('#productManagementPageTableDiv').off('click', '#productManagementPageTable #changeImageProductButton').on('click', '#productManagementPageTable #changeImageProductButton', function (e) {
+
+            e.preventDefault();
+
+            var row = $(this).closest("tr");
+            var rowData = row.find("#productManagementPageTableHiddenInput").val();
+            var arrayData = rowData.split("|");
+
+            $('#changeImageModalTitle').text("Change Product Image");
+
+            var arrayImgData = arrayData[6].split("/");
+
+            $('#changeImageProductCode').val(arrayData[1]);
+            $('#changeImageProductName').val(arrayData[2]);
+            $('#changeImageProductFileName').val(arrayImgData[2]);
+
+            $('#changeImageModal').modal('show');
+
+
+        });
+        // Product Change Image Function End
+
+
+
+        // Product Change Image Check For File Type Start
+        $('#changeImageModalImageDiv').off('change', '#viewImageSegmentHolder #viewImageSegmentFileInput').on('change', '#viewImageSegmentHolder #viewImageSegmentFileInput', function (e) {
+
+            var selectedFile = document.getElementById('viewImageSegmentFileInput');
+
+            if (selectedFile.files && selectedFile.files[0] && selectedFile.files[0].name.match(/\.(jpg|jpeg|png|gif)$/)) {
+
+                if (this.files[0].size > 1048576) {
+
+                    swal("Invalid File Size !!!", "File size is larger than 1MB, Please Choose Small Size Image !!!", "warning");
+
+                } else {
+
+                }
+
+            } else {
+
+                swal("Invalid File !!!", "This is not an image file, Please Choose Valid Image File !!!", "warning");
+                document.getElementById('viewImageSegmentFileInput').value = "";
+
+            }
+
+        });
+        // Product Change Image Check For File Type End
+
+
+
+        // Product Change Image Function Controller Start
+        $('#changeImageModalImageDiv').off('click', '#viewImageSegmentHolder #viewImageSegmentFileButton').on('click', '#viewImageSegmentHolder #viewImageSegmentFileButton', function (e) {
+
+            e.preventDefault();
+
+
+            var selectedFile = document.getElementById('viewImageSegmentFileInput');
+            var selectedFileVal = selectedFile.value;
+
+            if (selectedFileVal === "" || selectedFileVal === null) {
+
+                swal("No File Selected !!!", "Please Choose Image File !!!", "warning");
+
+            } else {
+
+                var selectedFileData = selectedFile.files[0];
+                var selectedFileCode = document.getElementById('changeImageProductCode').value;
+
+                var formImage = new FormData();
+                formImage.append('productImageFile', selectedFileData);
+
+
+                $.ajax({
+                    url: "controllerProcess/productManagementPageChangeImage.php",
+                    type: "post",
+                    data: formImage,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    timeout: 10000,
+                    success: function (datas) {
+
+                        console.log(datas);
+                        var arrData = datas.trim().split("|");
+
+                        if (arrData[0] === "Success") {
+
+                            var dataForUpdateUmage = {
+                                productCode: selectedFileCode,
+                                productPath: arrData[1]
+                            };
+
+                            $.ajax({
+                                url: "controllerProcess/productManagementPageChangeImagePath.php",
+                                type: "post",
+                                data: dataForUpdateUmage,
+                                timeout: 10000,
+                                success: function (datas) {
+
+                                    console.log(datas);
+
+                                    if (datas.trim() === 'Success') {
+
+                                        $('#productManagementPageTableDiv').load('productManagementPageTable.php');
+
+                                        $('#changeImageModal').modal('hide');
+
+                                        swal("Product Image is Changed Successfully !!!", "Image For " + selectedFileCode + " Is Changed...", "success");
+
+                                        $('#changeImageModalModalForm')[0].reset();
+                                        $('#viewImageSegmentForm')[0].reset();
+
+
+                                    } else {
+
+                                        swal("Image Change Failed !!!", "Please Try Again !!!", "error");
+
+                                        $('#changeImageModal').modal('hide');
+
+                                        $('#changeImageModalModalForm')[0].reset();
+                                        $('#viewImageSegmentForm')[0].reset();
+
+                                    }
+
+                                    //   $('.loading').hide();
+
+                                },
+                                error: function (err) {
+
+                                    console.log("Ajax Is Not Success");
+
+                                }
+                            });
+
+                        } else if (arrData[0] === "Duplication") {
+
+                            swal("Image Duplication Detected !!!", "Please use different Image !!!", "warning");
+
+                        } else {
+
+                            swal("Image Change Failed !!!", "Please Try Again !!!", "error");
+
+                            $('#changeImageModal').modal('hide');
+
+                            $('#changeImageModalModalForm')[0].reset();
+                            $('#viewImageSegmentForm')[0].reset();
+
+                        }
+
+                    },
+                    error: function (err) {
+
+                        console.log("Ajax Is Not Success");
+
+                    }
+
+
+                });
+
+
+            }
+
+
+        });
+        // Product Change Image Function Controller End
+
+
     });
 
 </script>

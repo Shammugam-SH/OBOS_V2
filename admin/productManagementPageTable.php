@@ -11,7 +11,7 @@ session_start();
 //                  1               2               3                   4             
 $sql = " SELECT product.ID,product.productID,product.productName,product.productPrice,"
         //              5                       6     
-        . " product.productQuantity,product.productCreatedBy "
+        . " product.productQuantity,product.productCreatedBy,product.productImage "
         //       CONDITION
         . " FROM product ";
 
@@ -28,6 +28,7 @@ $num = 1;
             <th>NAME</th>
             <th>PRICE</th>
             <th>QUANTITY</th>
+            <th>IMAGE</th>
             <th>ACTION</th>
         </tr>
     </thead>
@@ -48,6 +49,11 @@ $num = 1;
                 echo "<td>" . $row["productName"] . "</td>";
                 echo "<td>" . $row["productPrice"] . "</td>";
                 echo "<td>" . $row["productQuantity"] . "</td>";
+                echo "<td align='center'>";
+                echo '<button id="viewImageProductButton" class="btn btn-default" data-status="pagado" data-toggle="modal" data-id="1" data-target="#"> <i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; VIEW</button> ';
+                echo '&nbsp; &nbsp; &nbsp; &nbsp;';
+                echo '<button id="changeImageProductButton" class="btn btn-danger" data-status="pagado" data-toggle="modal" data-id="1" data-target="#"> <i class="fa fa-refresh" aria-hidden="true"></i> &nbsp; CHANGE</button> ';
+                echo "</td>";
                 echo "<td align='center'>";
                 echo '<a data-toggle="modal" data-target="#productModal" id="btnProductManagementPageTableUpdate"><i class="fa fa-edit fa-fw"></i></a> ';
                 echo '<a data-toggle="modal" data-target="#" id="btnProductManagementPageTableDel"><i class="fa fa-trash-o fa-fw"></i></a> ';
