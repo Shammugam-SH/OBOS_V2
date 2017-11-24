@@ -167,6 +167,93 @@
 
 
 
+<!-- Cart Order Modal-->
+<div class="modal fade" id="orderProductCartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="orderProductCartModalTitle" align="center">Cart</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+
+                    <div class="form-group">
+                        <div class="form-row">
+
+                            <div class="col-sm-12 col-md-12 col-md-offset-1">
+
+                                <table class="table table-hover" id="orderProductCartModalTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th class="text-center">Price</th>
+                                            <th class="text-center">Total</th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="orderProductCartTbody">
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group" align="right" style="font-size: 19px;font-weight: bold;">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="exampleInputLastName">Total Quantity (Units)  :  </label>
+                            </div>    
+                            <div class="col-md-4">
+                                <input class="form-control" id="viewOrderCartTotalQuantity" type="text"  aria-describedby="nameHelp" disabled>
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="form-group" align="right" style="font-size: 19px;font-weight: bold;">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="exampleInputLastName">Grand Total (RM)  :  </label>
+                            </div>    
+                            <div class="col-md-4">
+                                <input class="form-control" id="viewOrderCartTotalPrice" type="text"  aria-describedby="nameHelp" disabled>
+                            </div>   
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default" id="customerReset" type="button" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-success" id="viewOrderCartCheckOutBtn" type="button">
+                        Checkout <span class="glyphicon glyphicon-play"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cart Order Modal-->
+
+
 <script>
 
     $(document).ready(function () {
