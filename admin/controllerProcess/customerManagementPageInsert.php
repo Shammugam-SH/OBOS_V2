@@ -14,7 +14,7 @@ session_start();
 $customerEmail = $_POST["customerEmail"];
 $customerFName = $_POST["customerFName"];
 $customerLName = $_POST["customerLName"];
-$customerPassword = $_POST["customerPassword"];
+$customerPassword = md5($_POST["customerPassword"]);
 $customerAddress = $_POST["customerAddress"];
 $customerPhoneNo = $_POST["customerPhoneNo"];
 $userID = $_SESSION["ID"];

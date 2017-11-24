@@ -64,7 +64,7 @@ include './userSessionCheck.php';
                                     </div>
                                     <div class="mr-5"><strong>ORDER PRODUCT</strong></div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="orderProduct.php">
                                     <span class="float-left"><strong>You can order product that are listed in this project...</strong></span>
                                     <span class="float-right">
                                         <i class="fa fa-angle-right"></i>
@@ -80,7 +80,7 @@ include './userSessionCheck.php';
                                     </div>
                                     <div class="mr-5"><strong>MANAGE ORDERS</strong></div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="manageOrderPending.php">
                                     <span class="float-left"><strong>You can manage the orders transaction using this menu...</strong></span>
                                     <span class="float-right">
                                         <i class="fa fa-angle-right"></i>
@@ -96,7 +96,7 @@ include './userSessionCheck.php';
                                     </div>
                                     <div class="mr-5"><strong>DATA ANALYSIS</strong></div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="manageAnalysisTransactionSummary.php">
                                     <span class="float-left"><strong>You can view detail analysis using this menu...</strong></span>
                                     <span class="float-right">
                                         <i class="fa fa-angle-right"></i>

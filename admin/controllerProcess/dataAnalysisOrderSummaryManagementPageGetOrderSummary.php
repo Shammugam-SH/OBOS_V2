@@ -192,7 +192,7 @@ if ($resultSales->num_rows > 0) {
                     <div>Total Sales (RM)</div>
                 </strong>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="manageAnalysisOverallSales.php">
                 <span class="float-left">
                     <strong>
                         View Details

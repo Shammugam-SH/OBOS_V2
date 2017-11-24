@@ -187,6 +187,7 @@
 
         } else {
 
+            $('<div class="loading">Loading</div>').appendTo('body');
 
             $.ajax({
                 url: "controllerProcessOrderProduct/orderProductPageGetSeqNo.php",
@@ -263,6 +264,9 @@
 
 
                             }
+
+                            $('.loading').hide();
+
 
                         },
                         error: function (err) {

@@ -45,7 +45,7 @@ if ($resultSales->num_rows > 0) {
 
 <div class="row">
 
-    
+
     <div class="col-xl-6 col-sm-6 mb-3">
         <div class="card text-white bg-secondary o-hidden h-100">
             <div class="card-body">
@@ -57,7 +57,7 @@ if ($resultSales->num_rows > 0) {
                     <div>Total Product Purchased (UNITS)</div>
                 </strong>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="manageOrderApproved.php">
                 <span class="float-left">
                     <strong>
                         View Details
@@ -82,7 +82,7 @@ if ($resultSales->num_rows > 0) {
                     <div>Total Money Spend (RM)</div>
                 </strong>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="manageOrderApproved.php">
                 <span class="float-left">
                     <strong>
                         View Details

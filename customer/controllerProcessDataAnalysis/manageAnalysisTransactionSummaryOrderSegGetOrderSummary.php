@@ -99,7 +99,7 @@ if ($resultOrderRej->num_rows > 0) {
                     <div>Pending Order</div>
                 </strong>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="manageOrderNew.php">
+            <a class="card-footer text-white clearfix small z-1" href="manageOrderPending.php">
                 <span class="float-left">
                     <strong>
                         View Details
