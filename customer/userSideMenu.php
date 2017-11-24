@@ -26,13 +26,13 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-                <a href="#">Pending Order</a>
+                <a href="manageOrderPending.php">Pending Order</a>
             </li>
             <li>
-                <a href="#">Approved Order</a>
+                <a href="manageOrderApproved.php">Approved Order</a>
             </li>
             <li>
-                <a href="#">Rejected Order</a>
+                <a href="manageOrderRejected.php">Rejected Order</a>
             </li>
         </ul>
     </li>
@@ -43,19 +43,19 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-                <a href="#">Transaction Summary</a>
+                <a href="manageAnalysisTransactionSummary.php">Transaction Summary</a>
             </li>
             <li>
                 <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">Periodic Transaction Record</a>
                 <ul class="sidenav-third-level collapse" id="collapseMulti">
                     <li>
-                        <a href="#">Daily Purchase</a>
+                        <a href="manageAnalysisPeriodSalesDay.php">Daily Purchase</a>
                     </li>
                     <li>
-                        <a href="#">Monthly Purchase</a>
+                        <a href="manageAnalysisPeriodSalesMonth.php">Monthly Purchase</a>
                     </li>
                     <li>
-                        <a href="#">Yearly Purchase</a>
+                        <a href="manageAnalysisPeriodSalesYear.php">Yearly Purchase</a>
                     </li>
                 </ul>
             </li>
